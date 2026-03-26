@@ -1,4 +1,4 @@
-<img width="2691" height="1237" alt="image" src="https://github.com/user-attachments/assets/e3618f05-4387-4995-8dbf-6be2caccc8bd" /># CyberTeamWork
+# CyberTeamWork
 Ứng dụng quản lý công việc nhóm CyberTeamWork - Sử dụng .Net, React và Flutter (Xem chi tiết ở Word và PowerPoint)
 
 GIẢNG VIÊN HƯỚNG DẪN: ThS. Đinh Thị Mận
