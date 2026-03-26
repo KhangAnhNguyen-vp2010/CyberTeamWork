@@ -8,6 +8,24 @@ SINH VIÊN THỰC HIỆN:
 + 2001222025 – Nguyễn Huyện Anh Khang
 + 2001221635 – Trần Gia Huy
 
+MÔ TẢ: Đề tài đã hoàn thành mục tiêu xây dựng "Ứng dụng Quản lý công việc nhóm". Kết
+quả của đề tài là một hệ thống phần mềm hoàn chỉnh, có khả năng xử lý real-time bao gồm:
+– Ứng dụng Web (Backend và Admin): Sử dụng C# (ASP.NET Core Web API)
+và SQL Server để xử lý logic nghiệp vụ và quản trị cơ sở dữ liệu.
+– Ứng dụng Mobile: Sử dụng Dart (Flutter) để xây dựng giao diện đa nền tảng
+(Android, iOS), cho phép người dùng thao tác linh hoạt.
+– Cơ sở dữ liệu: Thiết kế và triển khai cơ sở dữ liệu trên SQL Server, kết hợp
+Redis cho việc lưu trữ dữ liệu tạm.
+Hệ thống đã cài đặt và triển khai thực nghiệm thành công các nhóm chức năng chính,
+bao gồm:
+– Quản lý thành viên và nhóm.
+– Quản lý dự án và phân công công việc (với giao diện Kanban).
+– Chức năng trao đổi công việc (Bình luận).
+– Chức năng Báo cáo tiến độ và Đánh giá công việc.
+– Chức năng Thống kê báo cáo trực quan.
+– Các chức năng quản trị hệ thống như Quản lý tài khoản người dùng , Sao lưu và
+Phục hồi dữ liệu.
+
 Công nghệ sử dụng:
 + Dart (Flutter)
 + ASP.NET Core Web API
