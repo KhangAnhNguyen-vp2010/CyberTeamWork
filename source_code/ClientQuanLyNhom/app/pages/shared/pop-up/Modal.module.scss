@@ -1,0 +1,73 @@
+/* Modal.module.scss */
+.overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+.modal {
+  background: white;
+  padding: clamp(1rem, 2vw, 2rem);
+  border-radius: 16px;
+  position: relative;
+  min-width: 320px;
+  max-width: min(95vw, 1500px);
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 40px rgba(45, 33, 118, 0.18);
+
+  .modalHeader {
+    padding: 15px 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+
+    h2 {
+      margin: 0;
+      font-size: 1.25rem;
+      color: #333;
+    }
+  }
+
+  .modalContent {
+    overflow-y: auto;
+  }
+
+  /* Custom scrollbar */
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #5a39e6, #7c4dff);
+    border-radius: 4px;
+
+    &:hover {
+      background: linear-gradient(180deg, #4a2bc4, #6a3fd4);
+    }
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border: none;
+  background: none;
+  color: black;
+  font-size: 1.5rem;
+  cursor: pointer;
+}

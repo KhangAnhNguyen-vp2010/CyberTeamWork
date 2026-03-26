@@ -1,0 +1,128 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 48px 0;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(360px, 420px);
+  gap: 40px;
+  align-items: center;
+  width: min(1100px, 90vw);
+  padding: 40px 48px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18);
+}
+
+.heroPanel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #f8fafc;
+  padding: 32px;
+  border-radius: 24px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(148, 163, 184, 0.08));
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  overflow: hidden;
+}
+
+.heroIllustration {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+  width: clamp(260px, 75%, 320px);
+  margin-left: auto;
+  margin-right: auto;
+
+  img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    border-radius: 20px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.25);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    background: rgba(15, 23, 42, 0.35);
+    padding: 12px;
+  }
+}
+
+.heroGlow {
+  position: absolute;
+  inset: 12px;
+  border-radius: 18px;
+  background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.35), transparent 65%),
+    radial-gradient(circle at 80% 0%, rgba(244, 114, 182, 0.3), transparent 55%),
+    radial-gradient(circle at 50% 100%, rgba(45, 212, 191, 0.25), transparent 60%);
+  filter: blur(10px);
+  opacity: 0.8;
+}
+
+.heroText {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: rgba(226, 232, 240, 0.85);
+  }
+}
+
+.formWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .contentWrapper {
+    grid-template-columns: 1fr;
+    padding: 32px 28px;
+    width: min(620px, 90vw);
+  }
+
+  .heroPanel {
+    order: 2;
+  }
+
+  .formWrapper {
+    order: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .contentWrapper {
+    padding: 24px 20px;
+  }
+
+  .heroPanel {
+    padding: 24px;
+  }
+
+  .heroText h1 {
+    font-size: 1.8rem;
+  }
+
+  .heroText p {
+    font-size: 0.95rem;
+  }
+}

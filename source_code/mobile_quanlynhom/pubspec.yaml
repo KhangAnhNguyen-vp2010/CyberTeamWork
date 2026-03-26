@@ -1,0 +1,59 @@
+name: mobile_quanlynhom
+description: "A new Flutter project."
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # HTTP client
+  http: ^1.2.1
+  http_parser: ^4.0.2
+
+  # State management
+  provider: ^6.1.1
+
+  # Form validation
+  form_validator: ^2.1.1
+
+  # UI Components
+  flutter_svg: ^2.0.10+1
+  google_fonts: ^6.1.0
+  image_picker: ^1.0.7
+  file_selector: ^1.0.4
+
+  # Icons
+  cupertino_icons: ^1.0.2
+  flutter_local_notifications: ^17.1.2
+
+  # Authentication
+  google_sign_in: ^6.1.6
+
+  # Utils
+  fluttertoast: ^8.2.2
+  loading_animation_widget: ^1.2.0+2
+
+  # Local storage
+  shared_preferences: ^2.2.28
+  url_launcher: ^6.3.0
+  intl: ^0.20.2
+
+  # AI
+  google_generative_ai: ^0.4.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/images/auth/

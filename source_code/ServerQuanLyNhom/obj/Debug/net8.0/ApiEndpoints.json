@@ -1,0 +1,1962 @@
+[
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "GetAccounts",
+    "RelativePath": "api/Admin/accounts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "DeleteAccount",
+    "RelativePath": "api/Admin/accounts/{taiKhoanId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "taiKhoanId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "BanAccount",
+    "RelativePath": "api/Admin/accounts/{taiKhoanId}/ban",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "taiKhoanId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "ChangeAccountEmail",
+    "RelativePath": "api/Admin/accounts/{taiKhoanId}/change-email",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "taiKhoanId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.Controllers.AdminController\u002BChangeEmailByAdminRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "ChangeAccountRole",
+    "RelativePath": "api/Admin/accounts/{taiKhoanId}/change-role",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "taiKhoanId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.DTOs.Auths.ChangeRoleRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "AdminResetPassword",
+    "RelativePath": "api/Admin/accounts/{taiKhoanId}/reset-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "taiKhoanId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "UnbanAccount",
+    "RelativePath": "api/Admin/accounts/{taiKhoanId}/unban",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "taiKhoanId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "GetBannedAccounts",
+    "RelativePath": "api/Admin/accounts/banned",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "CreateAccount",
+    "RelativePath": "api/Admin/accounts/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.Controllers.AdminController\u002BCreateAccountByAdminRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "BackupAccountsAndMembers",
+    "RelativePath": "api/Admin/backup/accounts-members",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "BackupAccountsAndMembersPartial",
+    "RelativePath": "api/Admin/backup/accounts-members/partial",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.Controllers.AdminController\u002BPartialAccountsBackupRequest",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "BackupFullSystem",
+    "RelativePath": "api/Admin/backup/full-system",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "BackupIncremental",
+    "RelativePath": "api/Admin/backup/incremental",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "startDate",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "BackupProject",
+    "RelativePath": "api/Admin/backup/project/{duAnId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "duAnId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "BackupProjectPartial",
+    "RelativePath": "api/Admin/backup/project/partial",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.Controllers.AdminController\u002BPartialProjectBackupRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/Admin/change-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.DTOs.Auths.ChangePasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "ForgotPassword",
+    "RelativePath": "api/Admin/forgot-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.DTOs.Auths.ForgotPasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "GetGroupMemberIds",
+    "RelativePath": "api/Admin/groups/{nhomId}/members/ids",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nhomId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "AdminLogin",
+    "RelativePath": "api/Admin/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.DTOs.Auths.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/Admin/reset-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.DTOs.Auths.ResetPasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "CreateResetPasswordRequest",
+    "RelativePath": "api/Admin/reset-password-requests",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.DTOs.Auths.ResetPasswordRequestSubmit",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "GetResetPasswordRequests",
+    "RelativePath": "api/Admin/reset-password-requests",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "DeleteResetPasswordRequest",
+    "RelativePath": "api/Admin/reset-password-requests/{notificationId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "notificationId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "RestoreAccountsAndMembers",
+    "RelativePath": "api/Admin/restore/accounts-members",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "backupFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "RestoreFullSystem",
+    "RelativePath": "api/Admin/restore/full-system",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "backupFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "RestoreProject",
+    "RelativePath": "api/Admin/restore/project",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "backupFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "targetNhomId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "groupMemberIds",
+        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AdminController",
+    "Method": "GetRoles",
+    "RelativePath": "api/Admin/roles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AuthController",
+    "Method": "RequestChangeEmail",
+    "RelativePath": "api/Auth/change-email/request",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.DTOs.Auths.ChangeEmailRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AuthController",
+    "Method": "ResendChangeEmailOtp",
+    "RelativePath": "api/Auth/change-email/resend",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.DTOs.Auths.ChangeEmailResendRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AuthController",
+    "Method": "VerifyChangeEmail",
+    "RelativePath": "api/Auth/change-email/verify",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.DTOs.Auths.VerifyChangeEmailRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AuthController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/Auth/ChangePassword/{taiKhoanId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "taiKhoanId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "model",
+        "Type": "ServerQuanLyNhom.DTOs.Auths.ChangePasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AuthController",
+    "Method": "GetChuyenMon",
+    "RelativePath": "api/Auth/chuyen-mon",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AuthController",
+    "Method": "ForgotPassword",
+    "RelativePath": "api/Auth/forgot-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.DTOs.Auths.ForgotPasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.DTOs.Auths.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AuthController",
+    "Method": "OAuthLogin",
+    "RelativePath": "api/Auth/oauth-login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.DTOs.Auths.OAuthLoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/Auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.DTOs.Auths.RegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AuthController",
+    "Method": "ResendOtp",
+    "RelativePath": "api/Auth/resend-otp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.DTOs.Auths.ResendOtpRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AuthController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/Auth/reset-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.DTOs.Auths.ResetPasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AuthController",
+    "Method": "UpdateProfile",
+    "RelativePath": "api/Auth/update-profile/{nguoiDungId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nguoiDungId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "HoTen",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "GioiTinh",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgaySinh",
+        "Type": "System.Nullable\u00601[[System.DateOnly, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "MoTaBanThan",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SoDienThoai",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiaChi",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ChuyenMonId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AnhBia",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.AuthController",
+    "Method": "VerifyOtp",
+    "RelativePath": "api/Auth/verify-otp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.DTOs.Auths.VerifyOtpRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.BinhLuanController",
+    "Method": "CreateBinhLuan",
+    "RelativePath": "api/BinhLuan/CreateBinhLuan",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ServerQuanLyNhom.DTOs.BinhLuan.CreateBinhLuanRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.BinhLuanController",
+    "Method": "DeleteBinhLuan",
+    "RelativePath": "api/BinhLuan/DeleteBinhLuan/{binhLuanId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "binhLuanId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.BinhLuanController",
+    "Method": "GetBinhLuansOfCongViec",
+    "RelativePath": "api/BinhLuan/GetBinhLuansOfCongViec/{congViecId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "congViecId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.BinhLuanController",
+    "Method": "UpdateBinhLuan",
+    "RelativePath": "api/BinhLuan/UpdateBinhLuan/{binhLuanId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "binhLuanId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "ServerQuanLyNhom.DTOs.BinhLuan.UpdateBinhLuanRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.CongViecController",
+    "Method": "GetTrangThaiDuAn",
+    "RelativePath": "api/CongViec/{duanId}/trangthai",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "duanId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.CongViecController",
+    "Method": "AddTrangThai",
+    "RelativePath": "api/CongViec/{duanId}/trangthai",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "duanId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "tenTrangThai",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.CongViecController",
+    "Method": "DeleteTrangThai",
+    "RelativePath": "api/CongViec/{duanId}/trangthai/{tenTrangThai}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "duanId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "tenTrangThai",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.CongViecController",
+    "Method": "CapNhatTienDoCongViec",
+    "RelativePath": "api/CongViec/CapNhatTienDoCongViec/{congViecId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "congViecId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.CongViecController",
+    "Method": "CreateCongViec",
+    "RelativePath": "api/CongViec/CreateCongViec",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TenCongViec",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayBD",
+        "Type": "System.Nullable\u00601[[System.DateOnly, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayKT",
+        "Type": "System.Nullable\u00601[[System.DateOnly, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "TrangThai",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PhamTramHoanThanh",
+        "Type": "System.Nullable\u00601[[System.Single, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "DuAnID",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AnhBia",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.CongViecController",
+    "Method": "DeleteCongViec",
+    "RelativePath": "api/CongViec/DeleteCongViec/{congViecId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "congViecId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.CongViecController",
+    "Method": "DeleteFileDinhKem",
+    "RelativePath": "api/CongViec/DeleteFileDinhKem/{congViecId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "congViecId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "filePath",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.CongViecController",
+    "Method": "GetCongViecsByStat",
+    "RelativePath": "api/CongViec/GetCongViecsByStat/{duAnId}/{statType}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "duAnId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "statType",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.CongViecController",
+    "Method": "GetCongViecsOfDuAn",
+    "RelativePath": "api/CongViec/GetCongViecsOfDuAn/{duAnId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "duAnId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.CongViecController",
+    "Method": "GetFileDinhKem",
+    "RelativePath": "api/CongViec/GetFileDinhKem/{congViecId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "congViecId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.CongViecController",
+    "Method": "UpdateCongViec",
+    "RelativePath": "api/CongViec/UpdateCongViec",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CongViecID",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenCongViec",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayBD",
+        "Type": "System.Nullable\u00601[[System.DateOnly, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayKT",
+        "Type": "System.Nullable\u00601[[System.DateOnly, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "DuAnID",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AnhBia",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.CongViecController",
+    "Method": "UpdateTrangThai",
+    "RelativePath": "api/CongViec/UpdateTrangThai",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ServerQuanLyNhom.DTOs.CongViecs.UpdateTrangThaiRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.CongViecController",
+    "Method": "UploadFileDinhKem",
+    "RelativePath": "api/CongViec/UploadFileDinhKem/{congViecId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "congViecId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "files",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.DuAnController",
+    "Method": "GetDuAnDetail",
+    "RelativePath": "api/DuAn/{duAnId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "duAnId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.DuAnController",
+    "Method": "CreateDuAn",
+    "RelativePath": "api/DuAn/CreateDuAn",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TenDuAn",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "MoTa",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayBD",
+        "Type": "System.Nullable\u00601[[System.DateOnly, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayKT",
+        "Type": "System.Nullable\u00601[[System.DateOnly, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NhomID",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "LinhVucID",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "AnhBia",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.DuAnController",
+    "Method": "DeleteDuAn",
+    "RelativePath": "api/DuAn/DeleteDuAn/{duAnId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "duAnId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.DuAnController",
+    "Method": "GetDuAnQuaHan",
+    "RelativePath": "api/DuAn/GetDuAnQuaHan/{nhomId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nhomId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.DuAnController",
+    "Method": "GetProjectsOfGroup",
+    "RelativePath": "api/DuAn/GetProjectsOfGroup/{nhomId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nhomId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.DuAnController",
+    "Method": "GetLinhVuc",
+    "RelativePath": "api/DuAn/linh-vuc",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.DuAnController",
+    "Method": "ThongKeThanhVienTheoDuAn",
+    "RelativePath": "api/DuAn/ThanhVienTheoDuAn/{duAnId}/{top}/{loai}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "duAnId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "top",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "loai",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.DuAnController",
+    "Method": "ThongKeDuAn",
+    "RelativePath": "api/DuAn/ThongKe/{duAnId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "duAnId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.DuAnController",
+    "Method": "ThongKeBaoCaoDuAn",
+    "RelativePath": "api/DuAn/ThongKeBaoCaoDuAn/{duAnId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "duAnId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.DuAnController",
+    "Method": "ThongKeTongQuan",
+    "RelativePath": "api/DuAn/ThongKeTongQuan/{nhomId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nhomId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.DuAnController",
+    "Method": "GetProgressPriority",
+    "RelativePath": "api/DuAn/TienDoUuTien/{duAnId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "duAnId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.DuAnController",
+    "Method": "UpdateDuAn",
+    "RelativePath": "api/DuAn/UpdateDuAn",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "DuAnID",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenDuAn",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "MoTa",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayBD",
+        "Type": "System.Nullable\u00601[[System.DateOnly, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayKT",
+        "Type": "System.Nullable\u00601[[System.DateOnly, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "LinhVucID",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TrangThai",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "AnhBia",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.NhomController",
+    "Method": "GetNhomDetail",
+    "RelativePath": "api/Nhom/{nhomId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nhomId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.NhomController",
+    "Method": "GetThanhVienByNhom",
+    "RelativePath": "api/Nhom/{nhomId}/ThanhVien",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nhomId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.NhomController",
+    "Method": "GetThanhVienInNhom",
+    "RelativePath": "api/Nhom/{nhomId}/ThanhVien/{thanhVienId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nhomId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "thanhVienId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.NhomController",
+    "Method": "CreateGroup",
+    "RelativePath": "api/Nhom/CreateGroup",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TenNhom",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "MoTa",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "AnhBia",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "ThanhVienID",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.NhomController",
+    "Method": "LayLoiMoiDaGui",
+    "RelativePath": "api/Nhom/da-gui/{nguoiGuiId}/{nhomId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nguoiGuiId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "nhomId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.NhomController",
+    "Method": "DeleteGroup",
+    "RelativePath": "api/Nhom/DeleteGroup/{nhomId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nhomId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.NhomController",
+    "Method": "GetGroupsOfMember",
+    "RelativePath": "api/Nhom/GetGroupsOfMember/{thanhVienId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "thanhVienId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.NhomController",
+    "Method": "GuiLoiMoi",
+    "RelativePath": "api/Nhom/gui-loi-moi",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ServerQuanLyNhom.DTOs.Nhoms.MoiThanhVienRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.NhomController",
+    "Method": "LayLoiMoiTheoThanhVien",
+    "RelativePath": "api/Nhom/loi-moi/{mailNguoiNhan}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mailNguoiNhan",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.NhomController",
+    "Method": "PhanHoiLoiMoi",
+    "RelativePath": "api/Nhom/phan-hoi-loi-moi",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ServerQuanLyNhom.DTOs.Nhoms.PhanHoiLoiMoiRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.NhomController",
+    "Method": "UpdateGroup",
+    "RelativePath": "api/Nhom/UpdateGroup",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "NhomID",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenNhom",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "MoTa",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "AnhBia",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.PhanCongController",
+    "Method": "AddPhanCongItem",
+    "RelativePath": "api/PhanCong/AddPhanCongItem/{congViecId}/{thanhVienId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "congViecId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "thanhVienId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "newItem",
+        "Type": "ServerQuanLyNhom.DTOs.PhanCongs.PhanCongItemRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.PhanCongController",
+    "Method": "BaoCaoTienDoUpload",
+    "RelativePath": "api/PhanCong/BaoCaoTienDoUpload",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CongViecId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ThanhVienId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "SubTaskId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NoiDung",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Files",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.PhanCongController",
+    "Method": "CapNhatTienDoHoanThanh",
+    "RelativePath": "api/PhanCong/CapNhatTienDoHoanThanh",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.DTOs.PhanCongs.CapNhatTienDoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.PhanCongController",
+    "Method": "ChuyenNguoiPhanCong",
+    "RelativePath": "api/PhanCong/ChuyenNguoiPhanCong",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ServerQuanLyNhom.DTOs.PhanCongs.ChuyenPhanCongRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.PhanCongController",
+    "Method": "DanhGiaTienDo",
+    "RelativePath": "api/PhanCong/DanhGiaTienDo",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.DTOs.PhanCongs.DanhGiaTienDoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.PhanCongController",
+    "Method": "DeletePhanCongItem",
+    "RelativePath": "api/PhanCong/DeletePhanCongItem/{congViecId}/{thanhVienId}/{subTaskId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "congViecId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "thanhVienId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "subTaskId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.PhanCongController",
+    "Method": "GetAllSubTasksInProject",
+    "RelativePath": "api/PhanCong/GetAllSubTasksInProject/{duAnId}/{thanhVienId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "duAnId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "thanhVienId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.PhanCongController",
+    "Method": "GetPhanCongOfCongViec",
+    "RelativePath": "api/PhanCong/GetPhanCongOfCongViec/{congViecId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "congViecId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.PhanCongController",
+    "Method": "LayTatCaPhanCongTheoDuAn",
+    "RelativePath": "api/PhanCong/phancong/duan/{duAnId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "duAnId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.PhanCongController",
+    "Method": "GetTasksSapHetHan",
+    "RelativePath": "api/PhanCong/TasksSapHetHan/{duAnId}/{thanhVienId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "duAnId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "thanhVienId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.PhanCongController",
+    "Method": "ToggleLockSubTask",
+    "RelativePath": "api/PhanCong/ToggleLockSubTask",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.DTOs.PhanCongs.ToggleLockSubTaskRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.PhanCongController",
+    "Method": "UpdatePhanCongItem",
+    "RelativePath": "api/PhanCong/UpdatePhanCongItem/{congViecId}/{thanhVienId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "congViecId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "thanhVienId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "ServerQuanLyNhom.DTOs.PhanCongs.UpdatePhanCongItemRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.PhanCongController",
+    "Method": "XoaFileBaoCao",
+    "RelativePath": "api/PhanCong/XoaFileBaoCao",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ServerQuanLyNhom.DTOs.PhanCongs.XoaFileBaoCaoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.ThanhVienController",
+    "Method": "LayChiTietThanhVien",
+    "RelativePath": "api/ThanhVien/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.ThanhVienController",
+    "Method": "KickThanhVienKhoiNhom",
+    "RelativePath": "api/ThanhVien/KickThanhVienKhoiNhom/{nhomId}/{thanhVienId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nhomId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "thanhVienId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.ThanhVienController",
+    "Method": "LayTatCaThanhVien",
+    "RelativePath": "api/ThanhVien/thanh-vien",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.ThongBaoController",
+    "Method": "DeleteThongBao",
+    "RelativePath": "api/ThongBao/DeleteThongBao/{thanhVienId}/{thongBaoId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "thanhVienId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "thongBaoId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.ThongBaoController",
+    "Method": "GetThongBaoOfThanhVien",
+    "RelativePath": "api/ThongBao/GetThongBaoOfThanhVien/{thanhVienId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "thanhVienId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.ThongBaoController",
+    "Method": "MarkAllAsRead",
+    "RelativePath": "api/ThongBao/MarkAllAsRead/{thanhVienId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "thanhVienId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.ThongBaoController",
+    "Method": "MarkAsRead",
+    "RelativePath": "api/ThongBao/MarkAsRead/{thanhVienId}/{thongBaoId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "thanhVienId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "thongBaoId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.ThongBaoController",
+    "Method": "NhacHanCongViec",
+    "RelativePath": "api/ThongBao/NhacHanCongViec",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ServerQuanLyNhom.DTOs.ThongBaos.NhacHanCongViecRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.ThongBaoController",
+    "Method": "ThongBaoBinhLuanMoi",
+    "RelativePath": "api/ThongBao/ThongBaoBinhLuanMoi",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ServerQuanLyNhom.DTOs.ThongBaos.ThongBaoBinhLuanRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.ThongBaoController",
+    "Method": "ThongBaoCongViecMoi_ChoThanhVien",
+    "RelativePath": "api/ThongBao/ThongBaoCongViecMoi_ChoThanhVien",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ServerQuanLyNhom.DTOs.ThongBaos.ThongBaoCongViecMoiRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerQuanLyNhom.Controllers.ThongBaoController",
+    "Method": "ToggleGhim",
+    "RelativePath": "api/ThongBao/ToggleGhim/{thanhVienId}/{thongBaoId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "thanhVienId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "thongBaoId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

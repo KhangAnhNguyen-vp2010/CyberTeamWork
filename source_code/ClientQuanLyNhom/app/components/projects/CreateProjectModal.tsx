@@ -1,0 +1,405 @@
+import React, { useState, useEffect } from "react";
+import Modal from "../../pages/shared/pop-up/Modal";
+import api from "../../apis/api";
+import { toast } from "react-toastify";
+import styles from "./CreateProjectModal.module.scss";
+
+interface Props {
+  isOpen: boolean;
+  onClose: () => void;
+  onSuccess: () => void;
+  nhomId: number;
+}
+
+const CreateProjectModal: React.FC<Props> = ({
+  isOpen,
+  onClose,
+  onSuccess,
+  nhomId,
+}) => {
+  const [tenDuAn, setTenDuAn] = useState("");
+  const [moTa, setMoTa] = useState("");
+  const [ngayBd, setNgayBd] = useState("");
+  const [ngayKt, setNgayKt] = useState("");
+  const [trangThai, setTrangThai] = useState("Đang thực hiện");
+  const [linhVucId, setLinhVucId] = useState(1);
+  const [linhVucList, setLinhVucList] = useState<any[]>([]);
+  const [linhVucInput, setLinhVucInput] = useState<string | null>(null);
+  const [showLinhVucDropdown, setShowLinhVucDropdown] = useState(false);
+  const [anhBia, setAnhBia] = useState<File | null>(null);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [durationMonths, setDurationMonths] = useState<number | "">(""); // Số tháng
+
+  // Lấy ngày hiện tại theo định dạng YYYY-MM-DD
+  const getTodayDate = () => {
+    const today = new Date();
+    return today.toISOString().split("T")[0];
+  };
+
+  // Tự động tính và điền cả ngày bắt đầu và kết thúc khi chọn theo tháng
+  const handleMonthSelection = (months: number) => {
+    setDurationMonths(months);
+
+    // Ngày bắt đầu = hôm nay
+    const today = new Date();
+    const startDate = today.toISOString().split("T")[0];
+    setNgayBd(startDate);
+
+    // Ngày kết thúc = hôm nay + số tháng
+    const endDate = new Date(today);
+    endDate.setMonth(endDate.getMonth() + months);
+    setNgayKt(endDate.toISOString().split("T")[0]);
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      api
+        .get("/DuAn/linh-vuc")
+        .then((response) => {
+          const data = Array.isArray(response.data?.data)
+            ? response.data.data
+            : [];
+          setLinhVucList(data);
+          if (data.length > 0 && linhVucId === 1) {
+            setLinhVucInput(null); // Reset để hiển thị giá trị mặc định
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching linh-vuc:", error);
+          setLinhVucList([]);
+        });
+    } else {
+      // Reset form khi modal đóng
+      setTenDuAn("");
+      setMoTa("");
+      setNgayBd("");
+      setNgayKt("");
+      setTrangThai("Đang thực hiện");
+      setLinhVucId(1);
+      setLinhVucInput(null);
+      setAnhBia(null);
+      setImagePreview(null);
+      setDurationMonths("");
+      setShowLinhVucDropdown(false);
+    }
+  }, [isOpen]);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setAnhBia(file);
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setImagePreview(e.target?.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (nhomId === 0) {
+      toast.error("Vui lòng chọn một nhóm trước khi tạo dự án!");
+      return;
+    }
+    if (!tenDuAn.trim() || !moTa.trim() || !ngayBd || !ngayKt) {
+      toast.error("Vui lòng điền đầy đủ thông tin!");
+      return;
+    }
+
+    // Validation: Ngày bắt đầu phải >= ngày hiện tại
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Reset về 00:00:00
+    const startDate = new Date(ngayBd);
+    startDate.setHours(0, 0, 0, 0);
+
+    if (startDate.getTime() < today.getTime()) {
+      toast.error("Ngày bắt đầu dự án phải từ ngày hiện tại trở đi!");
+      return;
+    }
+
+    if (new Date(ngayBd) >= new Date(ngayKt)) {
+      toast.error("Ngày bắt đầu phải nhỏ hơn ngày kết thúc!");
+      return;
+    }
+
+    setLoading(true);
+    const formData = new FormData();
+    formData.append("nhomID", nhomId.toString());
+    formData.append("tenDuAn", tenDuAn);
+    formData.append("moTa", moTa);
+    formData.append("ngayBD", ngayBd);
+    formData.append("ngayKT", ngayKt);
+    formData.append("linhVucID", linhVucId.toString());
+    if (anhBia) {
+      formData.append("anhBia", anhBia);
+    }
+
+    try {
+      const response = await api.post("/DuAn/CreateDuAn", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      if (response.status === 200) {
+        toast.success("Tạo dự án thành công!");
+        onSuccess();
+        onClose();
+        setTenDuAn("");
+        setMoTa("");
+        setNgayBd("");
+        setNgayKt("");
+        setTrangThai("Đang thực hiện");
+        setLinhVucId(1);
+        setLinhVucInput("");
+        setAnhBia(null);
+        setImagePreview(null);
+      } else {
+        toast.error(response.data.message || "Có lỗi xảy ra!");
+      }
+    } catch (error: any) {
+      console.error("Create project error:", error);
+      toast.error(error.response?.data?.message || "Có lỗi khi tạo dự án!");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <Modal isOpen={isOpen} onClose={onClose}>
+      <div className={styles.container}>
+        <h2 className={styles.title}>Tạo Dự Án Mới</h2>
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <div className={styles.field}>
+            <label htmlFor="tenDuAn" className={styles.label}>
+              Tên Dự Án:
+            </label>
+            <input
+              type="text"
+              id="tenDuAn"
+              value={tenDuAn}
+              onChange={(e) => setTenDuAn(e.target.value)}
+              className={styles.input}
+              required
+            />
+          </div>
+          <div className={styles.field}>
+            <label htmlFor="moTa" className={styles.label}>
+              Mô Tả:
+            </label>
+            <textarea
+              id="moTa"
+              value={moTa}
+              onChange={(e) => setMoTa(e.target.value)}
+              className={styles.textarea}
+              required
+            />
+          </div>
+
+          <div className={styles.field}>
+            <label htmlFor="durationMonths" className={styles.label}>
+              ⚡ Chọn nhanh theo tháng (tự động điền ngày):
+            </label>
+            <select
+              id="durationMonths"
+              value={durationMonths}
+              onChange={(e) => {
+                const months = e.target.value;
+                if (months) {
+                  handleMonthSelection(Number(months));
+                } else {
+                  setDurationMonths("");
+                }
+              }}
+              className={styles.input}
+            >
+              <option value="">-- Hoặc chọn nhanh theo tháng --</option>
+              <option value="1">1 tháng</option>
+              <option value="2">2 tháng</option>
+              <option value="3">3 tháng</option>
+              <option value="4">4 tháng</option>
+              <option value="5">5 tháng</option>
+              <option value="6">6 tháng</option>
+              <option value="9">9 tháng</option>
+              <option value="12">12 tháng (1 năm)</option>
+              <option value="18">18 tháng</option>
+              <option value="24">24 tháng (2 năm)</option>
+            </select>
+          </div>
+
+          <div className={styles.row}>
+            <div className={styles.field}>
+              <label htmlFor="ngayBd" className={styles.label}>
+                Ngày Bắt Đầu:
+              </label>
+              <input
+                type="date"
+                id="ngayBd"
+                value={ngayBd}
+                onChange={(e) => setNgayBd(e.target.value)}
+                min={getTodayDate()}
+                className={styles.input}
+                required
+                title="Ngày bắt đầu phải từ ngày hiện tại trở đi"
+              />
+            </div>
+            <div className={styles.field}>
+              <label htmlFor="ngayKt" className={styles.label}>
+                Ngày Kết Thúc:
+              </label>
+              <input
+                type="date"
+                id="ngayKt"
+                value={ngayKt}
+                onChange={(e) => setNgayKt(e.target.value)}
+                min={ngayBd || getTodayDate()}
+                className={styles.input}
+                required
+              />
+            </div>
+          </div>
+
+          <div className={styles.field}>
+            <label htmlFor="linhVucId" className={styles.label}>
+              Lĩnh Vực:
+            </label>
+            <div style={{ position: "relative", width: "100%" }}>
+              <input
+                type="text"
+                id="linhVucId"
+                value={
+                  linhVucInput !== null && linhVucInput !== undefined
+                    ? linhVucInput
+                    : linhVucList.find((lv) => lv.linhVucId === linhVucId)
+                        ?.tenLinhVuc || ""
+                }
+                onChange={(e) => {
+                  const value = e.target.value;
+                  setLinhVucInput(value);
+                  setShowLinhVucDropdown(true);
+                  const found = linhVucList.find(
+                    (lv) => lv.tenLinhVuc.toLowerCase() === value.toLowerCase()
+                  );
+                  if (found) {
+                    setLinhVucId(found.linhVucId);
+                  } else if (value === "") {
+                    // Reset khi xóa hết
+                    setLinhVucId(
+                      linhVucList.length > 0 ? linhVucList[0].linhVucId : 1
+                    );
+                  }
+                }}
+                onFocus={() => setShowLinhVucDropdown(true)}
+                onBlur={() =>
+                  setTimeout(() => setShowLinhVucDropdown(false), 200)
+                }
+                className={styles.select}
+                placeholder="Nhập hoặc chọn lĩnh vực"
+                required
+                list="linhVucOptions"
+                style={{ width: "100%", minWidth: "300px" }}
+              />
+              <datalist id="linhVucOptions">
+                {linhVucList.map((lv) => (
+                  <option key={lv.linhVucId} value={lv.tenLinhVuc}>
+                    {lv.tenLinhVuc}
+                  </option>
+                ))}
+              </datalist>
+              {showLinhVucDropdown && linhVucList.length > 0 && (
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "100%",
+                    left: 0,
+                    right: 0,
+                    background: "white",
+                    border: "1px solid #ddd",
+                    borderRadius: "8px",
+                    maxHeight: "200px",
+                    overflowY: "auto",
+                    zIndex: 1000,
+                    boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  {linhVucList
+                    .filter(
+                      (lv) =>
+                        !linhVucInput ||
+                        lv.tenLinhVuc
+                          .toLowerCase()
+                          .includes(linhVucInput.toLowerCase())
+                    )
+                    .map((lv) => (
+                      <div
+                        key={lv.linhVucId}
+                        onClick={() => {
+                          setLinhVucId(lv.linhVucId);
+                          setLinhVucInput(lv.tenLinhVuc);
+                          setShowLinhVucDropdown(false);
+                        }}
+                        style={{
+                          padding: "10px 12px",
+                          cursor: "pointer",
+                          borderBottom: "1px solid #f0f0f0",
+                        }}
+                        onMouseEnter={(e) =>
+                          (e.currentTarget.style.background = "#f5f5f5")
+                        }
+                        onMouseLeave={(e) =>
+                          (e.currentTarget.style.background = "white")
+                        }
+                      >
+                        {lv.tenLinhVuc}
+                      </div>
+                    ))}
+                </div>
+              )}
+            </div>
+            <input type="hidden" value={linhVucId} required />
+          </div>
+          <div className={styles.field}>
+            <label htmlFor="anhBia" className={styles.label}>
+              Ảnh Bìa:
+            </label>
+            <input
+              type="file"
+              id="anhBia"
+              accept="image/*"
+              onChange={handleFileChange}
+              className={styles.input}
+            />
+            {imagePreview && (
+              <div className={styles.imagePreview}>
+                <img
+                  src={imagePreview}
+                  alt="Preview"
+                  className={styles.previewImage}
+                />
+              </div>
+            )}
+          </div>
+          <div className={styles.actions}>
+            <button
+              type="submit"
+              disabled={loading}
+              className={styles.submitBtn}
+            >
+              {loading ? "Đang tạo..." : "Tạo Dự Án"}
+            </button>
+            <button
+              type="button"
+              onClick={onClose}
+              className={styles.cancelBtn}
+            >
+              Hủy
+            </button>
+          </div>
+        </form>
+      </div>
+    </Modal>
+  );
+};
+
+export default CreateProjectModal;

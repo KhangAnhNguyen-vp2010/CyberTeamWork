@@ -1,0 +1,522 @@
+.reportSection {
+  padding: 24px 0;
+}
+
+// ========== HEADER WITH ALERT ==========
+.reportHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding: 0 16px;
+
+  .title {
+    margin: 0;
+    font-size: 1.75rem;
+    color: #1f2937;
+  }
+
+  .subtitle {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-top: 4px;
+  }
+
+  .alertBadge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 24px;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .exportButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+
+    &:hover:not(:disabled) {
+      background: linear-gradient(135deg, #059669, #047857);
+      box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+      transform: translateY(-2px);
+    }
+
+    &:active:not(:disabled) {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    svg {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+// ========== STATS GRID - 4 CARDS ==========
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 0 16px;
+  margin-bottom: 32px;
+}
+
+.statCard {
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background: white;
+  border: 2px solid transparent;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  &.large {
+    grid-column: span 1;
+  }
+
+  &.success {
+    border-color: #10b981;
+    .statIcon {
+      color: #10b981;
+    }
+  }
+
+  &.danger {
+    border-color: #ef4444;
+    .statIcon {
+      color: #ef4444;
+    }
+  }
+
+  &.warning {
+    border-color: #f59e0b;
+    .statIcon {
+      color: #f59e0b;
+    }
+  }
+
+  &.info {
+    border-color: #3b82f6;
+    .statIcon {
+      color: #3b82f6;
+    }
+  }
+}
+
+.statIcon {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statContent {
+  flex: 1;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.statValue {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1;
+}
+
+.statSubtext {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin-top: 4px;
+}
+
+.progressComparison {
+  margin-top: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  .ahead {
+    color: #10b981;
+  }
+
+  .behind {
+    color: #ef4444;
+  }
+}
+
+.statBreakdown {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  .completed {
+    color: #10b981;
+  }
+
+  .inProgress {
+    color: #3b82f6;
+  }
+
+  .delayed {
+    color: #ef4444;
+  }
+}
+
+// ========== MAIN CHARTS - ONLY 2 CHARTS ==========
+.mainChartsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  padding: 0 16px;
+  margin-bottom: 24px;
+}
+
+.chartCard {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+
+  h3,
+  h4 {
+    margin-bottom: 20px;
+    color: #1f2937;
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.chartWrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+// ========== COLLAPSIBLE SECTIONS ==========
+.collapsibleSection {
+  margin: 0 16px 24px 16px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.collapsibleToggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px;
+  background: linear-gradient(135deg, #f9fafb, #ffffff);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: linear-gradient(135deg, #f3f4f6, #f9fafb);
+  }
+
+  svg {
+    &:first-child {
+      color: #3b82f6;
+      font-size: 1.25rem;
+    }
+
+    &:last-child {
+      margin-left: auto;
+      color: #6b7280;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  span {
+    flex: 1;
+    text-align: left;
+  }
+}
+
+.collapsibleContent {
+  padding: 24px;
+  border-top: 1px solid #e5e7eb;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.detailedChartsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+// ========== COMPACT METRICS ==========
+.metricsCard {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+}
+
+.metricsCompact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+
+  section {
+    background: #f9fafb;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .metricTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    svg {
+      color: #3b82f6;
+    }
+  }
+
+  .metricList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+
+    .metricLabel {
+      color: #6b7280;
+    }
+
+    .metricValue {
+      color: #1f2937;
+      font-weight: 600;
+    }
+  }
+}
+
+.assessmentBadge {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 2px solid;
+  background: white;
+  font-weight: 600;
+  color: #1f2937;
+  text-align: center;
+  width: 100%;
+  margin-top: 8px;
+}
+
+// Remove old metricsGrid - already replaced above
+
+// ========== MEMBER STATS (INSIDE COLLAPSIBLE) ==========
+.memberStatsCard {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.memberStatsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+
+  h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #1f2937;
+  }
+}
+
+.memberStatsSubtitle {
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.memberStatsControls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.memberStatsToggleGroup {
+  display: inline-flex;
+  border: 1px solid #d0d5dd;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #f8fafc;
+}
+
+.memberStatsToggle {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #475569;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &.active {
+    background: #6366f1;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+  }
+}
+
+.memberStatsSelectWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #475569;
+
+  select {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid #d0d5dd;
+    background: #ffffff;
+    color: #1f2937;
+    cursor: pointer;
+  }
+}
+
+.memberStatsStatus {
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.memberStatsError {
+  text-align: center;
+  color: #dc2626;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.memberStatsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.memberStatItem {
+  padding: 18px 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  }
+}
+
+.memberStatHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.memberStatName {
+  font-weight: 600;
+  font-size: 16px;
+  color: #1f2937;
+}
+
+.memberStatBadge {
+  padding: 4px 10px;
+  background: rgba(99, 102, 241, 0.12);
+  color: #4338ca;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.memberStatDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: #475569;
+
+  span {
+    font-size: 14px;
+
+    strong {
+      color: #1f2937;
+    }
+  }
+}
